@@ -25,8 +25,8 @@ describe('Figure 1.1 - Planning Poker bug when have estimates in ascending order
     const planningPoker = new PlanningPoker()
 
     const expectedWrongResult = {
-      lowestEstimate: null, // instead of null we should receive { developer: 'Ross', value: 2 }
-      highestEstimate: { developer: 'Chandler', value: 16 }
+      lowestEstimate: undefined, // instead of null we should receive  'Ross' instead of null
+      highestEstimate: 'Chandler'
     }
 
     expect(planningPoker.identifyExtremes(estimates)).toEqual(expectedWrongResult)

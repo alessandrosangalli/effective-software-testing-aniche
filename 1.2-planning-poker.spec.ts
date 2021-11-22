@@ -25,8 +25,8 @@ describe('Figure 1.2 - Fixing the bug of figure 1.1', () => {
     const planningPoker = new PlanningPoker()
 
     const expectedResult = {
-      lowestEstimate: { developer: 'Ross', value: 2 },
-      highestEstimate: { developer: 'Chandler', value: 16 }
+      lowestEstimate: 'Ross',
+      highestEstimate: 'Chandler'
     }
 
     expect(planningPoker.identifyExtremes(estimates)).toEqual(expectedResult)

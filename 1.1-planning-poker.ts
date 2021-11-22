@@ -2,7 +2,7 @@
 export interface Estimate {developer: string, value: number}
 
 export default class PlanningPoker {
-  public identifyExtremes (estimates: Estimate[]): {lowestEstimate: Estimate | null, highestEstimate: Estimate | null} {
+  public identifyExtremes (estimates: Estimate[]): {lowestEstimate: string | undefined, highestEstimate: string | undefined} {
     let lowestEstimate: Estimate | null = null
     let highestEstimate: Estimate | null = null
 
@@ -15,8 +15,8 @@ export default class PlanningPoker {
     }
 
     return {
-      lowestEstimate,
-      highestEstimate
+      lowestEstimate: lowestEstimate?.developer,
+      highestEstimate: highestEstimate?.developer
     }
   }
 }

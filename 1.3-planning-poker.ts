@@ -9,7 +9,7 @@ export class MinimumNumberOfEstimatesError extends Error {
 }
 
 export default class PlanningPoker {
-  public identifyExtremes (estimates: Estimate[]): {lowestEstimate: Estimate | null, highestEstimate: Estimate | null} {
+  public identifyExtremes (estimates: Estimate[]): {lowestEstimate: string | undefined, highestEstimate: string | undefined} {
     // We dont need the estimates === null verification because in Typescript "estimates: Estimate[]" never will be null
     if (estimates.length <= 1) {
       throw new MinimumNumberOfEstimatesError()
@@ -29,8 +29,8 @@ export default class PlanningPoker {
     }
 
     return {
-      lowestEstimate,
-      highestEstimate
+      lowestEstimate: lowestEstimate?.developer,
+      highestEstimate: highestEstimate?.developer
     }
   }
 }

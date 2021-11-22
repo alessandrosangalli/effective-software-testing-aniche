@@ -1,7 +1,7 @@
-import PlanningPoker, { Estimate } from './1.1-planning-poker'
+import PlanningPoker, { Estimate } from './1.2-planning-poker'
 
-describe('Figure 1.2 - Planning Poker bug when have estimates in ascending order', () => {
-  it('This bug causes us not to get the lowest estimate', () => {
+describe('Figure 1.2 - Fixing the bug of figure 1.1', () => {
+  it('Now we cant input estimates in ascending order.', () => {
     const estimates: Estimate[] = [
       {
         developer: 'Ross',
@@ -24,11 +24,11 @@ describe('Figure 1.2 - Planning Poker bug when have estimates in ascending order
 
     const planningPoker = new PlanningPoker()
 
-    const expectedWrongResult = {
-      lowestEstimate: null, // instead of null we should receive { developer: 'Ross', value: 2 }
+    const expectedResult = {
+      lowestEstimate: { developer: 'Ross', value: 2 },
       highestEstimate: { developer: 'Chandler', value: 16 }
     }
 
-    expect(planningPoker.identifyExtremes(estimates)).toEqual(expectedWrongResult)
+    expect(planningPoker.identifyExtremes(estimates)).toEqual(expectedResult)
   })
 })
